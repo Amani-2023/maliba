@@ -138,6 +138,39 @@
             </div>
 
         </div>
+        <!-- 🔁 RECONNECT SECTION -->
+        <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; margin-bottom: 15px; text-align: center;">
+            <h3>🔁 Reconnect WiFi</h3>
+            <p>If your session expired, enter your M-Pesa transaction code to reconnect.</p>
+
+            <button onclick="reconnect()" style="background:#ff9800;">
+        Reconnect
+    </button>
+        </div>
+
+        <script>
+            function reconnect() {
+                let code = prompt("Enter your M-Pesa Transaction Code:");
+
+                if (code === null || code.trim() === "") {
+                    alert("No code entered!");
+                    return;
+                }
+
+                // simple validation (you can improve this later)
+                if (code.length < 6) {
+                    alert("Invalid code. Please check your M-Pesa SMS.");
+                    return;
+                }
+
+                alert("Payment verified! Reconnecting WiFi...");
+
+                // redirect to login or dashboard
+                window.location.href = "index.html";
+            }
+        </script>
+
+
 
         <!-- PACKAGES -->
         <div class="package ">
@@ -180,6 +213,12 @@
             <a href="payment.html?pkg=KES 499 - 1 Month "><button>Select</button></a>
         </div>
 
+    </div>
+    <!-- 📞 CUSTOMER CARE -->
+    <div style="background: rgba(0,0,0,0.6); padding: 15px; border-radius: 10px; text-align: center;">
+        <h3>📞 Customer Care</h3>
+        <p>Need help? Contact us anytime:</p>
+        <p><strong>0796 671 204</strong> / <strong>0758 821 217</strong></p>
     </div>
 
     <!-- 🔥 SLIDER SCRIPT -->
