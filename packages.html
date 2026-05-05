@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MALIBA WIFI - Packages</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            color: white;
+            /* 🔥 Network nodes background image */
+            background-image: url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        /* optional dark overlay for readability */
+        
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.65);
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 420px;
+            margin: 20px auto;
+            background: rgba(0, 0, 0, 0.75);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        h2 {
+            text-align: center;
+        }
+        /* 🔥 IMAGE UPDATE SLIDER */
+        
+        .slider {
+            width: 100%;
+            height: 160px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 15px;
+        }
+        
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 160px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .slide img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+        /* 🔥 TEXT OVERLAY */
+        
+        .overlay {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 6px 10px;
+            border-radius: 5px;
+            font-size: 13px;
+        }
+        
+        .active {
+            opacity: 1;
+        }
+        /* packages */
+        
+        .package {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        button {
+            background: #00c853;
+            color: white;
+            border: none;
+            padding: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .active {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>MALIBA WIFI LOGIN</h2>
+
+        <!-- 🔥 IMAGE UPDATES SECTION -->
+        <div class="slider">
+
+            <!-- WIFI -->
+            <div class="slide active">
+                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d">
+                <div class="overlay">📶 MALIBA WIFI - Fast & Reliable Internet</div>
+            </div>
+
+            <!-- GAS CYLINDER (YOUR IMAGE) -->
+            <div class="slide">
+                <img src="images/gas.jpg">
+                <div class=" overlay ">
+                    🛢️ PRO GAS CYLINDER<br> Available: 6KG • 12KG
+                </div>
+            </div>
+
+            <!-- MILK (YOUR IMAGE) -->
+            <div class="slide ">
+                <img src="images/milk.jpg">
+                <div class="overlay ">
+                    🥛 FRESH DAIRY MILK<br> Daily Farm Supply
+                </div>
+            </div>
+
+        </div>
+
+        <!-- PACKAGES -->
+        <div class="package ">
+            <span>1 Hour - KES 8</span>
+            <a href="payment.html?pkg=KES 8 - 1 Hour "><button>Select</button></a>
+        </div>
+
+        <div class="package ">
+            <span>3 Hours - KES 15</span>
+            <a href="payment.html?pkg=KES 15 - 3 Hours "><button>Select</button></a>
+        </div>
+
+        <div class="package ">
+            <span>6 Hours - KES 25</span>
+            <a href="payment.html?pkg=KES 25 - 6 Hours "><button>Select</button></a>
+        </div>
+
+        <div class="package ">
+            <span>12 Hours - KES 35</span>
+            <a href="payment.html?pkg=KES 35 - 12 Hours "><button>Select</button></a>
+        </div>
+
+        <div class="package ">
+            <span>24 Hours - KES 49</span>
+            <a href="payment.html?pkg=KES 49 - 24 Hours "><button>Select</button></a>
+        </div>
+
+        <div class="package ">
+            <span>1 Week - KES 199</span>
+            <a href="payment.html?pkg=KES 199 - 1 Week "><button>Select</button></a>
+        </div>
+
+        <div class="package ">
+            <span>2 Weeks - KES 299</span>
+            <a href="payment.html?pkg=KES 299 - 2 Weeks "><button>Select</button></a>
+        </div>
+
+        <div class="package ">
+            <span>1 Month - KES 499</span>
+            <a href="payment.html?pkg=KES 499 - 1 Month "><button>Select</button></a>
+        </div>
+
+    </div>
+
+    <!-- 🔥 SLIDER SCRIPT -->
+    <script>
+        let index = 0;
+        const slides = document.querySelectorAll(".slide");
+
+        function showSlide() {
+            slides.forEach((s) => {
+                s.classList.remove("active");
+                s.style.opacity = "0";
+            });
+
+            slides[index].classList.add("active");
+            slides[index].style.opacity = "1";
+
+            index = (index + 1) % slides.length;
+        }
+
+        showSlide();
+        setInterval(showSlide, 3000);
+    </script>
+
+</body>
+
+</html>

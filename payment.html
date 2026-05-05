@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MALIBA WIFI - Payment</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+        }
+        
+        .container {
+            max-width: 420px;
+            margin: 20px auto;
+            background: rgba(0, 0, 0, 0.75);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        h2,
+        h3 {
+            text-align: center;
+        }
+        
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .pay {
+            background: #2196F3;
+            color: white;
+        }
+        
+        .or {
+            text-align: center;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+        
+        .steps {
+            font-size: 13px;
+            color: #ccc;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>MALIBA WIFI PAYMENT</h2>
+
+        <h3 id="pkg"></h3>
+
+        <input type="text" placeholder="Enter Phone Number (07... or 01...)" id="phone">
+
+        <button class="pay" onclick="pay()">Pay via M-Pesa</button>
+
+        <div class="or">OR</div>
+
+        <div class="steps">
+            1. Go to M-Pesa<br> 2. Select Lipa na M-Pesa<br> 3. Select Buy Goods & Services<br> 4. Enter Till Number: <b>5862470</b><br> 5. Enter amount shown above<br> 6. Enter PIN and confirm<br> 7. Wait for activation
+        </div>
+
+    </div>
+
+    <script>
+        // get package from URL
+        let params = new URLSearchParams(window.location.search);
+        let pkg = params.get("pkg");
+
+        document.getElementById("pkg").innerText = "Selected: " + pkg;
+
+        function pay() {
+            let phone = document.getElementById("phone").value;
+
+            if (!phone) {
+                alert("Enter phone number");
+                return;
+            }
+
+            alert(
+                "M-PESA PAYMENT\n\n" +
+                "Package: " + pkg + "\n" +
+                "Phone: " + phone + "\n\n" +
+                "Pay via Till 5862470\nFollow steps below."
+            );
+        }
+    </script>
+
+</body>
+
+</html>
