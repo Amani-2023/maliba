@@ -2,13 +2,75 @@
 <html lang="en">
 
 <head>
-    <title>Form</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MALIBA WIFI</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #0b1f2a;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        
+        .box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+        /* WiFi image animation */
+        
+        .wifi-icon {
+            width: 90px;
+            height: 90px;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.3);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .small {
+            font-size: 14px;
+            color: #ccc;
+        }
+    </style>
 </head>
 
 <body>
+
+    <div class="box">
+        <!-- Replace emoji with real image -->
+        <img src="images/wifi.jpg" class="wifi-icon" alt="WiFi Logo">
+
+        <h2>Device Detected</h2>
+        <p class="small">Connecting to MALIBA WIFI...</p>
+        <p class="small">Redirecting to packages</p>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            window.location.href = "packages.html";
+        }, 3000);
+    </script>
 
 </body>
 
